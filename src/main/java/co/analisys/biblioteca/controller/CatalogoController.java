@@ -70,7 +70,7 @@ public class CatalogoController {
             @ApiResponse(responseCode = "404", description = "No se encontraron libros que coincidan con el criterio de búsqueda")
     })
     @GetMapping("/buscar")
-    public List<Libro> buscarLibros() {
-        return catalogoService.buscarLibros();
+    public List<Libro> buscarLibros(@RequestParam String criterio) {
+        return catalogoService.buscarLibros(criterio);
     }
 }
